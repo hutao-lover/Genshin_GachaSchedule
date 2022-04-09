@@ -1,0 +1,2628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <link rel="stylesheet" href="Genshin_GachaSchedule.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <style type="text/css">
+
+    table.t1 {table-layout: fixed; width: 1200px; border-collapse: separate; border-spacing: 0}
+
+    col.character_name {width: 90.0px}
+    col.rank {width: 40.0px}
+    col.period {width: 35.0px}
+
+    th.character_name_head, th.character_name {position: sticky; left: 0; z-index: 1}
+    th.rank_head, th.rank {position: sticky; left: 90.0px; z-index: 2}
+    tr:first-child {position: sticky; top: 0; z-index: 3}
+
+    th.character_name_head {height: 30.0px; background-color: #393e46; border-right: solid 0.8px #b3b3b3; border-bottom: solid 0.8px #303841}
+    th.rank_head {background-color: #393e46;border-right: solid 0.8px #b3b3b3; border-bottom: solid 0.8px #303841}
+    th.character_name {height: 30.0px; background-color: #ffff; border-right: solid 0.8px #e7e7e7; border-bottom: solid 0.8px #303841}
+    th.rank {background-color: #ffff; border-right: solid 0.8px #303841; border-bottom: solid 0.8px #303841}
+
+    td.period {background-color: #393e46; border-right: solid 0.8px #b3b3b3; border-bottom: solid 0.8px #303841}
+    td.score {background-color: #ffff; border-right: solid 0.8px #e7e7e7; border-bottom: solid 0.8px #303841}
+    td.red {background-color: #d72323; background-color: rgba(215, 35, 35, 0.9)}
+    td.orange {background-color: #fd826e; background-color: rgba(253, 130, 110, 0.9)}
+    td.apricot {background-color: #feca78; background-color: rgba(254, 202, 120, 0.9)}
+    td.yellow {background-color: #fffe86; background-color: rgba(255, 254, 134, 0.9)}
+    td.green {background-color: #a1e176; background-color: rgba(161, 225, 118, 0.9)}
+    td.blue {background-color: #89ede5; background-color: rgba(137, 237, 229, 0.9)}
+
+    p.p1 {margin: 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.white {margin: 0.0px; text-align: center; font: 12.0px 'Hiragino Kaku Gothic ProN'; color: #ffffff}
+    p.score {margin: 0.0px; text-align: center; font: 12.0px 'Hiragino Kaku Gothic ProN'; color: #1c1b15}
+    p.rank_best3 {margin: 0.0px; text-align: center; font: 14.0px 'Hiragino Kaku Gothic ProN'; color: #d72323}
+    p.rank_best5 {margin: 0.0px; text-align: center; font: 14.0px 'Hiragino Kaku Gothic ProN'; color: #feae00}
+    p.rank_worst {margin: 0.0px; text-align: center; font: 12.0px 'Hiragino Kaku Gothic ProN'; color: #b3b3b3}
+    p.anemo {margin: 0.0px; text-align: center; font: 12.0px 'Hiragino Kaku Gothic ProN'; color: #7ee4c1}
+    p.pyro {margin: 0.0px; text-align: center; font: 12.0px 'Hiragino Kaku Gothic ProN'; color: #fa9460}
+    p.hydro {margin: 0.0px; text-align: center; font: 12.0px 'Hiragino Kaku Gothic ProN'; color: #2bdaf0}
+    p.geo {margin: 0.0px; text-align: center; font: 12.0px 'Hiragino Kaku Gothic ProN'; color: #e1b03e}
+    p.cryo {margin: 0.0px; text-align: center; font: 12.0px 'Hiragino Kaku Gothic ProN'; color: #98eae2}
+    p.electro {margin: 0.0px; text-align: center; font: 12.0px 'Hiragino Kaku Gothic ProN'; color: #9254cf}
+
+  </style>
+</head>
+<body>
+    <header>
+        <h1><span>原神</span>ガチャ過去スケジュールまとめ</h1>
+    </header>
+    <div class="container">
+        <div class="about">
+                <div class="description">
+                    <p>
+                        原神リリース当初から現在までの限定PU（ピックアップ）キャラガチャを一覧にまとめています。
+                        <br>過去に実装されたキャラの復刻タイミングの予想などにお役立てください。
+                        <br>
+                        <br>数表内の数値は「前回PUから経過した月数」であり、この数値に応じて色が変わります。
+                        <br>色が青から赤に近いほど、前回PUから日数が経っていることを表しています。
+                        <br>「順位」は直近の「前回PUから経過した月数」が多い順の順位を記載しています。
+                        <br>
+                        <br>なお、ガチャの開催時期については <a href="https://gamenoshirase.com/genshin-1505" >ゲームのしらせ 【原神】ピックアップガチャまとめ(キャラ編)</a> を参考にさせて頂きました。
+                    </p>
+                </div>
+        </div>
+        <div class="title">
+            <h3><span>ピックアップガチャスケジュール</span></h3>
+        </div>
+        <div class="contents">
+            <table cellspacing="0" cellpadding="0" class="t1">
+            <colgroup>
+                <col class="character_name">
+                <col class="rank">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">    
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+                <col class="period">
+            </colgroup>
+            <tbody>
+                <tr>
+                <th valign="middle" class="character_name_head table_side1">
+                    <p class="p1"><br></p>
+                </th>
+                <th valign="middle" class="rank_head">
+                    <p class="white"><b>順位</b></p>
+                </th>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>20年10月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>20年11月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>20年12月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>21年1月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>21年2月</b></p>
+                </th>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>21年3月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>21年4月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>21年5月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>21年6月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>21年7月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>21年8月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>21年9月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>21年10月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>21年11月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>21年12月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>22年1月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>22年2月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>22年3月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>22年4月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>22年5月</b></p>
+                </td>
+                <td colspan="2" valign="middle" class="period">
+                    <p class="white"><b>22年6月</b></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="anemo"><b>ウェンティ</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_worst">16</p>
+                </th>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8.5</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">9</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">9.5</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">10</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">10.5</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">11</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">11.5</p>
+                </td>
+                <td valign="middle" class="score orange">
+                    <p class="score">12</p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.0</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="pyro"><b>クレー</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_best3">1</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7</p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8.5</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">9</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">9.5</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">10</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">10.5</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="hydro"><b>タルタリヤ</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_best5">4</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6.5</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="geo"><b>鍾離</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_worst">11</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8.5</p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.0</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="geo"><b>アルベド</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_worst">6</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8.5</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">9</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">9.5</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">10</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">10.5</p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.0</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="cryo"><b>甘雨</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_worst">11</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8.5</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">9</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">9.5</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">10</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">10.5</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">11</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">11.5</p>
+                </td>
+                <td valign="middle" class="score orange">
+                    <p class="score">12</p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">3.0</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="anemo"><b>魈</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_worst">9</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8.5</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">9</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">9.5</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">10</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">10.5</p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="pyro"><b>胡桃</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_best5">5</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7.5</p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="cryo"><b>エウルア</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_worst">6</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.0</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="anemo"><b>楓原万葉</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_best3">2</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8.5</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">9</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">9.5</p>
+                </td>
+                <td valign="middle" class="score apricot">
+                    <p class="score">10</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="cryo"><b>神里綾華</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_worst">18</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8</p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="pyro"><b>宵宮</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_best3">3</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">7.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">8.5</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="electro"><b>雷電将軍</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_worst">14</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5.5</p>
+                </td>
+                <td valign="middle" class="score yellow">
+                    <p class="score">6</p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="hydro"><b>珊瑚宮心海</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_worst">14</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">5</p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="geo"><b>荒滝一斗</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_worst">8</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">4.5</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="cryo"><b>申鶴</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_worst">9</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.5</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3</p>
+                </td>
+                <td valign="middle" class="score green">
+                    <p class="score">3.5</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="electro"><b>八重神子</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_worst">13</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">2.0</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+                <tr>
+                <th valign="middle" class="character_name table_side1">
+                    <p class="cryo"><b>神里綾人</b></p>
+                </th>
+                <th valign="middle" class="rank">
+                    <p class="rank_worst">16</p>
+                </th>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score red">
+                    <p class="white"><b>PU</b></p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">0.5</p>
+                </td>
+                <td valign="middle" class="score blue">
+                    <p class="score">1.0</p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                <td valign="middle" class="score brank">
+                    <p class="p1"><br></p>
+                </td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+        <div class="caution">
+            <p>
+                ※恒常キャラの刻晴や期間限定キャラのアーロイは、今後復刻される可能性が低いと考えられるため、表には含めていません。
+                <br>※本記事ではガチャのおおまかな開催時期を示しています。（例：ウェンティの初回PU時期は2020/9/28～2020/10/18ですが、2020年10月上旬PUとしています。）
+                <br>詳細な日程を知りたい方は是非 <a href="https://gamenoshirase.com/genshin-1505" >こちら</a> をご覧ください。 
+            </p>
+        </div>
+        <div class="comment">
+            <p>
+                こうしてみると、いかにタルタリヤの復刻スパンが短いかが改めて分かりますね。
+                <br>一方、クレーや楓原万葉は前回の復刻からかなり時間が経っているので、近々ガチャに登場する可能性が高いといえそうです。
+                <br>
+                <br>新しいキャラの実装も控えていますので、どのタイミングで原石を使うべきかの参考になれば幸いです。
+                <br>
+                <br>では、よい原神ライフを。
+            </p>
+        </div>
+    </div>
+    <footer>
+    </footer>
+</body>
+</html>
